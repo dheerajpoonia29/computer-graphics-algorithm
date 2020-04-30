@@ -1,0 +1,68 @@
+#include<windows.h>
+#include<stdio.h>
+#include<GL/gl.h>
+#include<GL/glu.h>
+#include<GL/glut.h>
+#include<math.h>
+
+// LINE COORDINATE
+int X1=-50, Y1=50;
+int X2=100, Y2=150;
+
+// window coordinate
+int xmin = 0, xmax = 200;
+int ymin = 0, ymax = 200;
+
+// DECLARATION VARIABLE FOR OPERATION
+
+
+void init()
+{
+    glClearColor(0.0,0.0,0.0,0.0);
+    glOrtho(-100.0,300.0,-100.0,300.0,-300.0,300.0);
+}
+
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0, 1.0, 1.0);
+    // DRAWING WINDOW
+    glBegin(GL_LINE_LOOP);
+    glVertex2d(xmin, ymin);     // (0,0)
+    glVertex2d(xmax, ymin);         // (200,0)
+    glVertex2d(xmax,ymax);      // (200,200)
+    glVertex2d(xmin,ymax);         // (0, 200))
+    glEnd();
+
+    // DRAWING LINE IN WINDOW
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_LINES);
+    glVertex2d(X1, Y1);     // (50,50)
+    glVertex2d(X2, Y2);         // (100,100)
+    glEnd();
+
+    // FINDING ABRL
+    if(x1<xmin){
+        a=1;
+    }
+    if(x)
+
+    //CHECK LINE COMPLETELY INSIDE THE WINDOW
+
+
+    glFlush();
+}
+
+int main(int argc,char *argv[])
+{
+    glutInit(&argc,argv);
+    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+    glutInitWindowPosition(10,10);
+    glutInitWindowSize(500,500);
+    glutCreateWindow("Square");
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return EXIT_SUCCESS;
+}
